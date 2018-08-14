@@ -7,21 +7,23 @@ body{
 }
 
 .hero-image {
-    
     top: 0px;
-    left: 550px;
+    left: 0;
+    right: 0;
     height: 600px;
-    position: fixed;
-  }
-  .logo{
-      position: absolute;
-      padding: 0px;
-      margin: 0px;
-      top: 50%;
-      right: 750px;
-      height: 175px;
-      
-  }
+    position: absolute;
+    margin: 0 auto;
+}
+
+.logo {
+    position: absolute;
+    padding: 0px;
+    margin: 0 auto;
+    top: 50%;
+    right: 0;
+    height: 175px;
+    left: 0;
+}
   .wrapper{
       height: 6000px;
   }
