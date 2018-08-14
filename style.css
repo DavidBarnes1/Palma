@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#rock{
+    position: relative;
+}
+
+.hero-image {
+    
+    top: 0px;
+    left: 550px;
+    height: 600px;
+    position: fixed;
+  }
+  .logo{
+      position: absolute;
+      padding: 0px;
+      margin: 0px;
+      top: 50%;
+      right: 750px;
+      height: 175px;
+      
+  }
+  .wrapper{
+      height: 6000px;
+  }
