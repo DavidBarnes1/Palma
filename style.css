@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    
 }
 
 .nav-bar{
@@ -10,6 +11,8 @@ width: 100%;
 background: rgb(20, 20, 20);
 position: sticky;
 top: 0;
+z-index: 1;
+border: 2px solid white;
 
 }
 .nav-bar ul{
@@ -21,6 +24,18 @@ top: 0;
 .nav-bar ul li{
     list-style: none;
     padding-right: 30px;
+    box-shadow: 0px 12px 10px -10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 8px 0px 8px;
+    text-align: center;
+    transition: ease-in-out 300ms;
+}
+.nav-bar ul li:hover{
+    border-radius: 10px;
+box-shadow: 0px 17px 20px -20px rgba(0,0,0,0.2);
+transform: translate(0px, -7px);
 }
 .nav-bar ul li a {
     display: block;
@@ -31,6 +46,8 @@ top: 0;
     text-transform: capitalize;
 }
 .nav-bar .sign {
+    font-weight: normal;
+   
 
 }
 .header {
@@ -40,20 +57,21 @@ top: 0;
 }
 
 .hero-image {
-    top: 100px;
+    top: 50px;
     left: 0;
     right: 0;
     height: 700px;
     position: fixed;
     margin: 0 auto;
     z-index: -1;
+    opacity: 0.9;
 }
 
 .logo {
     position: absolute;
     padding: 0px;
     margin: 0 auto;
-    top: 200px;
+    top: 250px;
     right: 0;
     height: 250px;
     left: 0;
