@@ -2,10 +2,10 @@ body{
     margin: 0;
     padding: 0;
 }
-#rock {
+.header {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 600px;
 }
 
 .hero-image {
@@ -13,19 +13,25 @@ body{
     left: 0;
     right: 0;
     height: 600px;
-    position: absolute;
+    position: fixed;
     margin: 0 auto;
+    z-index: -1;
 }
 
 .logo {
     position: absolute;
     padding: 0px;
     margin: 0 auto;
-    top: 50%;
+    top: 212.5px;
     right: 0;
     height: 175px;
     left: 0;
 }
   .wrapper{
+      margin-left: auto;
+      margin-right: auto;
+      width: 1200px;
       height: 6000px;
+      background-color: white;
+      text-align: center;
   }
