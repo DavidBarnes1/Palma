@@ -39,8 +39,14 @@
     
 
         
+     <script>
+         function parallax(){
+    var parallax_logo = document.getElementsByClassName('logo');
+    parallax_logo.style.top = -(window.pageYOffset/2)+'px';
     
-
+         }
+         window.addEventListener("scroll",parallax);
+    </script>
     
 </body>
 </html>
