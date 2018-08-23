@@ -36,17 +36,19 @@
           right: 150px;
           z-index: 1;
       }
-      .bad{
+      #bad, #bad-result{
           display: none;
       }
-    .good{
+    #good, #good-result{
         display: none;
     }
+  
+    
     .text-fin {
         text-align: center;
         position: absolute;
-        top: 680px;
-        left: 170px;
+        top: 650px;
+        left: 130px;
         font-size: 3em;
         
     }
@@ -101,18 +103,41 @@ input:active {
         <h1 id="number">0</h1>
     </div>
     <div>
-        <img class="good" src="john.png" alt="">
-        <img class="bad" src="blue.jpg" alt="">
+        <img id="good" src="john.png" alt="">
+        <img id="bad" src="blue.jpg" alt="">
     </div>
     <div class="text-fin">
-        <p class="good">Well done for getting it right ! <br> Heres a picture of john</p>
-        <p class="bad">Stupid idiot !<br> you tried too many times</p>
+        <p id="good-result">Well done for getting it right ! <br> Heres a picture of john</p>
+        <p id="bad-result">Stupid idiot !<br> you tried too many times</p>
     </div>
 </div>
 
 
 <script>
 
+    var correct = 17;
+    var clicks = 0;
+    
+    
+
+var roll = function (){
+    var random = Math.floor (Math.random() * 51);
+    document.getElementById('number').innerHTML = random;
+
+
+        if(clicks >= 7){
+            document.getElementById('bad').style.display = 'block';
+            document.getElementById('bad-result').style.display = 'block';
+            
+
+        }else if (random == correct) {
+
+            document.getElementById('good').style.display = 'block';
+            document.getElementById('good-result').style.display = 'block';
+
+    }
+    clicks++
+}
 
 </script>
 </body>
