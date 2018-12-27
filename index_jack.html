@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#container{
+    position: relative;
+    background-color: brown;
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 75px; 
+}
+#big-bar{
+    position: relative;
+    height: 600px;
+    width: 200px;
+    background: blue;
+    left: 300px;
+    top: 100px;
+    /* overflow: hidden; */
+    border-radius: 20px 20px 20px 20px;
+}
+#medium-bar{
+    border-radius: 20px 20px 20px 20px;
+    z-index: 2;
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    background: green;
+    top: 200px;
+
+}
+#small-bar{
+    border-radius: 20px 20px 20px 20px;
+    z-index: 3;
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    background: black;
+    /* top: 100px;   */
+}
+#btn-go{
+    position: absolute;
+    top: 20px;
+    right: 600px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background: gold;
+    font-family: sans-serif;
+    font-size: 1.8em;
+    color: #424242;
+
+}
+#btn-stop{
+    position: absolute;
+    top: 20px;
+    right: 75px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background: red;
+    font-family: sans-serif;
+    font-size: 1.8em;
+    color: #424242;
+
+}
+</style>
+</head>
+<body>
+<div id="container">
+
+    <div id="big-bar">
+
+        <div id="medium-bar"></div>
+        <div id="small-bar"></div>
+    </div>
+    
+    <input id="btn-go" type="button" value="Go !" onclick="load()">
+    <input id="btn-stop" type="button" value="Stop !" onclick="">
+
+
+</div>
+</body>
+    <script>
+
+function load() {
+
+    var count = 0;
+    var dir = 'up';
+    var bigBar = document.getElementById("big-bar");
+    var smallBar = document.getElementById("small-bar"); 
+    
+    function frame() {
+        // getBoundingClientRect gives you the position info for that element. Problem is it's not relative to the parent,
+        // it's relative to the window so it would be quite long to get things aligned.
+        // also you want to call getBoundingClientRect inside your frame loop, so it always gets the latest position
+        var bigBarBox = bigBar.getBoundingClientRect();
+        var smallBarBox = smallBar.getBoundingClientRect();
+        var bigBarHeight = bigBarBox.height;
+        var smallBarY = smallBarBox.y;
+
+
+        // the reason i've got a variable 'up/down' is because i essentially want a 'switch' that
+        // only changes once a value is hit. An easy mistake is to do greather than/less than
+        // but you end up in a position where you can never go backwards. bit of a head fuck.
+        if (smallBarY == 0) {
+            dir = 'up'
+        }
+        
+        if (smallBarY == bigBarHeight) {
+            dir = 'down'
+        } 
+        
+        // this is a ternary condition. basically an if or else but shorthand 
+        count += dir == 'up' ? 1 : -1;
+
+        // tranlateY is less janky than position top
+        smallBar.style.transform = "translateY(" + count + "px)"; 
+        
+    }
+    
+    setInterval(frame, 5);
+
+  }
+
+</script>
+</body>
+</html>
