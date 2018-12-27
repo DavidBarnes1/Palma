@@ -92,22 +92,19 @@ body {
     <script>
 
 function load() {
-    var barMove = document.getElementById("small-bar"); 
-    var pos = 600;
-    var y = 0;
-    var go = setInterval(start, 5);
-    function start() {
-      
- if (pos > 600){
-       pos --;
-       barMove.style.top + 'px';
-
-     }  else (pos < 0){
-        pos ++;
-        barMove.style.bottom + 'px';
-     }
-   }
-}
+    var elem = document.getElementById("small-bar"); 
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 600) {
+        clearInterval(id);
+      } else {
+        pos++; 
+        elem.style.top = pos + 'px'; 
+        
+      }
+    }
+  }
 
 </script>
 </body>
